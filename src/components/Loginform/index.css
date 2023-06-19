@@ -1,0 +1,150 @@
+  html,body{
+    overflow-x: hidden;
+}
+  .login-Container{
+    background-image: url("C:\Users\pk702\coterie\public\LoginBackground.jpg");
+    background-size: cover;
+    height: 100vh;
+  }
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1110px;
+    margin: auto;
+  }
+
+  .login-website-logo-desktop-img {
+    width: 230px;
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 992px) {
+    .login-form-container {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  
+  .login-img {
+    width: 350px;
+    margin-bottom: 30px;
+  }
+  
+  @media screen and (min-width: 992px) {
+    .login-img {
+      width: 60%;
+      max-width: 540px;
+      flex-shrink: 1;
+      margin-right: 35px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+    background-color: #ffffff;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media screen and (min-width: 992px) {
+    .form-container {
+      width: 350px;
+      flex-shrink: 0;
+      padding: 64px 48px 64px 48px;
+    }
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .input-label {
+    margin-bottom: 0px;
+    font-family:'Roboto';
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: #475569;
+  }
+  
+  .username-input-field {
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #d7dfe9;
+    background-color: #e2e8f0;
+    color: #64748b;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 8px 16px 8px 16px;
+    outline: none;
+  }
+  
+  .password-input-field {
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #d7dfe9;
+    background-color: #e2e8f0;
+    color: #64748b;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 8px 16px 8px 16px;
+    outline: none;
+  }
+  
+  .login-button {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    background-color: orange;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .error-message {
+    align-self: start;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16px;
+    color: #ff0b37;
+  }
+  @media screen and (max-width: 700px) {
+    .login-Container{
+      background-image: url("C:\Users\pk702\coterie\public\LoginMobileBackground.jpg");
+      background-size: cover;
+      height: 100vh;
+    }
+
+  }
+  .sign-up-mar{
+    margin-top: 5px;
+  }
+  .Sign-up-Link{
+    width: 100%;
+  }
+  .login-or{
+    font-family:'Roboto';
+    font-size: 15px;
+    color: #475569;
+  }

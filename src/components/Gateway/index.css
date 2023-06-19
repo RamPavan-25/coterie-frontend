@@ -1,0 +1,31 @@
+.gateway-Container{
+    height: 100vh;
+}
+.Gateway-div{
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;
+    margin-top: 15px;
+    border-color:antiquewhite;
+    
+}
+.Gateway-heading{
+    font-family: 'Roboto';
+    font-size: 25px;
+    margin-left: 10px;
+    color: #475569;
+}
+.debit-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.gateway-input-label {
+    margin-bottom: 0px;
+    font-family:'Roboto';
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: #475569;
+    margin-top: 10px;
+  }
