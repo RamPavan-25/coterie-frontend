@@ -2,7 +2,7 @@
     overflow-x: hidden;
 }
   .login-Container{
-    background-image: url("C:\Users\pk702\coterie\public\LoginBackground.jpg");
+    background-image: url("https://www.linkpicture.com/q/2202_w039_n003_110b_p1_110.jpg");
     background-size: cover;
     height: 100vh;
   }
@@ -131,7 +131,7 @@
   }
   @media screen and (max-width: 700px) {
     .login-Container{
-      background-image: url("C:\Users\pk702\coterie\public\LoginMobileBackground.jpg");
+      background-image: url("https://i.postimg.cc/gk6BfYq1/Login-Mobile-Background.jpg");
       background-size: cover;
       height: 100vh;
     }
