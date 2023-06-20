@@ -38,8 +38,8 @@ class SignUpForm extends Component {
   submitForm = async event => {
     event.preventDefault()
     const {username, password,ComfirmPassword} = this.state
-    if(password!==ComfirmPassword)
-    this.onSubmitFailure("Re-Confirm your password");
+    if(password!==ComfirmPassword||username===""||password==="")
+    this.onSubmitFailure("Invalid username or password not matched");
     else
     {
         const name=username.toString();
