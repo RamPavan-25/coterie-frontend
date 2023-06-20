@@ -6,8 +6,8 @@ const SimilarProductItem = props => {
   const {title, brand, imageUrl, rating, price,id} = productDetails
 
   return (
-    <Link to={`/products/${id}`} className="link-item">
-      <li className="similar-product-item">
+  <li className="similar-product-item">
+    <Link to={`/products/${id}`} className="link-item">    
       <img
         src={imageUrl}
         className="similar-product-img"
@@ -26,8 +26,8 @@ const SimilarProductItem = props => {
           />
         </div>
       </div>
+      </Link>
     </li>
-    </Link>
   )
 }
 
