@@ -57,7 +57,14 @@
   outline: none;
   cursor: pointer;
 }
-
+.checkout-button:hover{
+  background-color: white;
+    color: orange;
+    border-width: 2px;
+    border-style: solid;
+    border-color: orange;
+    transition: 0.5s;
+}
 @media screen and (max-width: 767px) {
   .d-sm-none {
     display: none;

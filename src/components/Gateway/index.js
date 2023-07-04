@@ -21,34 +21,58 @@ class Gateway extends Component {
 
   changeNetBanking=()=>{
     localStorage.setItem('dataKey', JSON.stringify("YES"));
-    this.setState({netbanking:true,
+    let {netbanking}=this.state;
+    let f;
+    if(netbanking===true)
+    f=false;
+    else
+    f=true;
+    this.setState({netbanking:f,
       creditcard:false,
       debitcard:false,
-      upi:false,});
+      upi:false});
   }
 
   changeCreditCard=()=>{
     localStorage.setItem('dataKey', JSON.stringify("YES"));
+    let {creditcard}=this.state;
+    let f;
+    if(creditcard===true)
+    f=false;
+    else
+    f=true;
     this.setState({netbanking:false,
-      creditcard:true,
+      creditcard:f,
       debitcard:false,
-      upi:false,});
+      upi:false});
   }
 
   changeDebitCard=()=>{
     localStorage.setItem('dataKey', JSON.stringify("YES"));
+    let {debitcard}=this.state;
+    let f;
+    if(debitcard===true)
+    f=false;
+    else
+    f=true;
     this.setState({netbanking:false,
       creditcard:false,
-      debitcard:true,
-      upi:false,});
+      debitcard:f,
+      upi:false});
   }
 
   changeUPI=()=>{
     localStorage.setItem('dataKey', JSON.stringify("YES"));
+    let {upi}=this.state;
+    let f;
+    if(upi===true)
+    f=false;
+    else
+    f=true;
     this.setState({netbanking:false,
       creditcard:false,
       debitcard:false,
-      upi:true,});
+      upi:f});
   }
 
   render() {
@@ -74,7 +98,8 @@ class Gateway extends Component {
             alt="website logo"
           />
           <div className='Gateway-div' onClick={this.changeNetBanking}>
-            <h1 className='Gateway-heading'>. Net Banking</h1>
+            <img src='https://i.ibb.co/sqvjDjk/internet-banking.png' className='gateway-icon'/>
+            <h1 className='Gateway-heading'>Net Banking</h1>
           </div>
           {netbanking &&<div className='debit-container'>
             <label className="gateway-input-label" htmlFor="NetBank">
@@ -83,7 +108,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="NetBank"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Bank Name"
             />
             <label className="gateway-input-label" htmlFor="NetUserName">
@@ -92,21 +117,22 @@ class Gateway extends Component {
             <input
               type="text"
               id="NetUserName"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Username"
             />
             <label className="gateway-input-label" htmlFor="NetPassword">
-              password
+              Password
             </label>
             <input
               type="password"
               id="NetPassword"
-              className="username-input-field"
-              placeholder="password"
+              className="Gateway-input-field"
+              placeholder="Password"
             />
           </div>}
           <div className='Gateway-div' onClick={this.changeCreditCard}>
-            <h1 className='Gateway-heading'>. Credit Card</h1>
+            <img src='https://i.ibb.co/4s7m4Rd/credit-card.png' className='gateway-icon'/>
+            <h1 className='Gateway-heading'>Credit Card</h1>
           </div>
           {creditcard&&<div className='debit-container'>
             <label className="gateway-input-label" htmlFor="creditcardnumber">
@@ -115,7 +141,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="creditcardnumber"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Card Number"
             />
             <label className="gateway-input-label" htmlFor="creditValid Thru">
@@ -124,7 +150,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="creditValid Thru"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="MM/YY"
             />
             <label className="gateway-input-label" htmlFor="creditCVV">
@@ -133,7 +159,7 @@ class Gateway extends Component {
             <input
               type="password"
               id="creditCVV"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="CVV"
             />
             <label className="gateway-input-label" htmlFor="creditName">
@@ -142,12 +168,13 @@ class Gateway extends Component {
             <input
               type="text"
               id="creditName"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Name on Card"
             />
           </div>}
           <div className='Gateway-div' onClick={this.changeDebitCard}>
-            <h1 className='Gateway-heading'>. Debit Card</h1>
+          <img src='https://i.ibb.co/s1nrRDf/credit-card-1.png' className='gateway-icon'/>
+            <h1 className='Gateway-heading'>Debit Card</h1>
           </div>
           {debitcard&&<div className='debit-container'>
             <label className="gateway-input-label" htmlFor="debitcardnumber">
@@ -156,7 +183,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="debitcardnumber"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Card Number"
             />
             <label className="gateway-input-label" htmlFor="debitValid Thru">
@@ -165,7 +192,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="debitValid Thru"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="MM/YY"
             />
             <label className="gateway-input-label" htmlFor="debitCVV">
@@ -174,7 +201,7 @@ class Gateway extends Component {
             <input
               type="password"
               id="debitCVV"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="CVV"
             />
             <label className="gateway-input-label" htmlFor="debitName">
@@ -183,12 +210,13 @@ class Gateway extends Component {
             <input
               type="text"
               id="debitName"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Name on Card"
             />
           </div>}
           <div className='Gateway-div'onClick={this.changeUPI} >
-            <h1 className='Gateway-heading'>. UPI</h1>
+          <img src='https://i.ibb.co/fqpd8YW/operation.png' className='gateway-icon'/>
+            <h1 className='Gateway-heading'>UPI</h1>
           </div>
           {upi&&<div className='debit-container'>
             <label className="gateway-input-label" htmlFor="UpiId">
@@ -197,7 +225,7 @@ class Gateway extends Component {
             <input
               type="text"
               id="UpiId"
-              className="username-input-field"
+              className="Gateway-input-field"
               placeholder="Upi id"
             />
             </div>}

@@ -70,14 +70,18 @@ class SignUpForm extends Component {
         <label className="input-label" htmlFor="Confirmpassword">
           CONFIRM PASSWORD
         </label>
-        <input
+        {/* <input
           type="password"
           id="Confirmpassword"
           className="password-input-field"
           value={ComfirmPassword}
           onChange={this.onChangeConfirmpassword}
           placeholder="Confirm Password"
-        />
+        /> */}
+        <div className='login-user-div'>
+          <img src='https://i.ibb.co/mX9wbm4/padlock.png' className="password-user-img" alt='person-icon'/>
+          <input type='password' id="Confirmpassword" className='password-input-field' value={ComfirmPassword} onChange={this.onChangeConfirmpassword} placeholder='Confirm Password'/>
+        </div>
       </>
     )
   }
@@ -90,14 +94,18 @@ class SignUpForm extends Component {
         <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
-        <input
+        {/* <input
           type="password"
           id="password"
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
           placeholder="Password"
-        />
+        /> */}
+        <div className='login-user-div'>
+          <img src='https://i.ibb.co/bW7jygk/lock.png' className="password-user-img" alt='lock-icon'/>
+          <input type='password' id="password" className='password-input-field' value={password} onChange={this.onChangePassword} placeholder='Password'/>
+        </div>
       </>
     )
   }
@@ -110,14 +118,18 @@ class SignUpForm extends Component {
         <label className="input-label" htmlFor="username">
           USERNAME
         </label>
-        <input
+        {/* <input
           type="text"
           id="username"
           className="username-input-field"
           value={username}
           onChange={this.onChangeUsername}
           placeholder="Username"
-        />
+        /> */}
+        <div className='login-user-div'>
+          <img src='https://i.ibb.co/D4BWfC0/person.png' className="login-user-img" alt='lock-icon-2'/>
+          <input type='text' id="username" className='username-input-field' value={username} onChange={this.onChangeUsername} placeholder='Username'/>
+      </div>
       </>
     )
   }
@@ -140,7 +152,7 @@ class SignUpForm extends Component {
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <div className="input-container">{this.renderConfirmPasswordField()}</div>
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-button login-btn-mt">
               Sign Up
             </button>
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}

@@ -35,25 +35,31 @@ class LoginForm extends Component {
   submitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
-    const userDetails = {username:username, password:password}
-    try{
-      const x=await axios.post(`${process.env.REACT_APP_BACKEND_URL}`,userDetails);
-      const data=x.data;
-      if(data.isuservalid===false)
-      {
-        this.onSubmitFailure("Username is not Valid");
+    if(username==="")
+    this.onSubmitFailure("Username not entered");
+    else if(password==="")
+    this.onSubmitFailure("Password not entered");
+    else{
+      const userDetails = {username:username, password:password}
+      try{
+        const x=await axios.post(`${process.env.REACT_APP_BACKEND_URL}`,userDetails);
+        const data=x.data;
+        if(data.isuservalid===false)
+        {
+          this.onSubmitFailure("Username not Exists");
+        }
+        else if(data.ispasswordvalid===false)
+        {
+          this.onSubmitFailure("Password not matched");
+        }
+        else
+        {
+          this.onSubmitSuccess(data.jwt_token);
+        }
       }
-      else if(data.ispasswordvalid===false)
-      {
-        this.onSubmitFailure("Password is not Valid");
+      catch(e){
+        console.log(e);
       }
-      else
-      {
-        this.onSubmitSuccess(data.jwt_token);
-      }
-    }
-    catch(e){
-      console.log(e);
     }
   }
 
@@ -65,14 +71,18 @@ class LoginForm extends Component {
         <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
-        <input
+        {/* <input
           type="password"
           id="password"
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
           placeholder="Password"
-        />
+        /> */}
+        <div className='login-user-div'>
+          <img src='https://i.ibb.co/bW7jygk/lock.png' className="password-user-img" alt='lock-icon'/>
+          <input type='password' id="password" className='password-input-field' value={password} onChange={this.onChangePassword} placeholder='Password'/>
+        </div>
       </>
     )
   }
@@ -85,14 +95,10 @@ class LoginForm extends Component {
         <label className="input-label" htmlFor="username">
           USERNAME
         </label>
-        <input
-          type="text"
-          id="username"
-          className="username-input-field"
-          value={username}
-          onChange={this.onChangeUsername}
-          placeholder="Username"
-        />
+        <div className='login-user-div'>
+          <img src='https://i.ibb.co/D4BWfC0/person.png' className="login-user-img" alt='person-icon'/>
+          <input type='text' id="username" className='username-input-field' value={username} onChange={this.onChangeUsername} placeholder='Username'/>
+        </div>
       </>
     )
   }
@@ -116,7 +122,7 @@ class LoginForm extends Component {
           />
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-button login-btn-mt">
               Login
             </button>
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}

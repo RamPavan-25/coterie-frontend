@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   align-self: center;
+  margin-top: 150px;
 }
 
 .cart-empty-img {
@@ -43,4 +44,12 @@
   padding-right: 16px;
   outline: none;
   cursor: pointer;
+}
+.shop-now-btn:hover{
+  background-color: white;
+  color: orange;
+  border-width: 1px;
+  border-style: solid;
+  border-color: orange;
+  transition: 0.5s;
 }
