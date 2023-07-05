@@ -1,7 +1,7 @@
 import AllProductsSection from '../AllProductsSection'
 import PrimeDealsSection from '../PrimeDealsSection'
 import Cookies from 'js-cookie'
-import { Navigate } from 'react-router-dom'
+import { Navigate,useLocation } from 'react-router-dom'
 import Header from '../Header'
 
 import './index.css'

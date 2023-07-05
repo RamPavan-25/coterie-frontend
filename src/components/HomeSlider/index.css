@@ -60,7 +60,6 @@ body {
     border-color: orange;
     transition: 0.5s;
   }
-
 .slider__controls {
   display: flex;
   justify-content: center;

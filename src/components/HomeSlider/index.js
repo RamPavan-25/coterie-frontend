@@ -1,5 +1,6 @@
 import React from "react"
 import './index.css'
+import { useNavigate } from "react-router-dom"
 class Slide extends React.Component {
   constructor(props) {
     super(props)
@@ -31,9 +32,14 @@ class Slide extends React.Component {
   imageLoaded(event) {
     event.target.style.opacity = 1
   }
+
+  GotoProduct=(id)=>{
+    const navigate=this.props.navigate
+    navigate(`products/${id}`)
+  }
   
   render() {
-    const { src, button, headline, index } = this.props.slide
+    const { src, button, headline, index, ProductId } = this.props.slide
     const current = this.props.current
     let classNames = 'slide'
     
@@ -60,7 +66,7 @@ class Slide extends React.Component {
         
         <article className="slide__content">
           <h2 className="slide__headline">{headline}</h2>
-          <button className="slide__action btn">{button}</button>
+          <button className="slide__action btn" onClick={()=>this.GotoProduct(ProductId)}>{button}</button>
         </article>
       </li>
     )
@@ -118,7 +124,7 @@ class Slider extends React.Component {
   }
 
   render() {
-    const { current, direction } = this.state
+    const { current} = this.state
     const { slides, heading } = this.props 
     const headingId = `slider-heading__${heading.replace(/\s+/g, '-').toLowerCase()}`
     const wrapperTransform = {
@@ -137,6 +143,7 @@ class Slider extends React.Component {
                 slide={slide}
                 current={current}
                 handleSlideClick={this.handleSlideClick}
+                navigate={this.props.navigate}
               />
             )
           })}
@@ -163,4 +170,7 @@ class Slider extends React.Component {
 }
 
 
-export default Slider
+export default (props)=>{
+  const navigate=useNavigate();
+  return(<Slider {...props} navigate={navigate}/>)
+}

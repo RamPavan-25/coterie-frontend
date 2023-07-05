@@ -116,7 +116,7 @@
   }
   .New-home-container{
     /* font-family: Arial; */
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -129,6 +129,12 @@
     z-index: -1;
     background-size: cover;
     width: 85%;
+  }
+  @media screen and (max-width: 450px){
+    .hero-banner{
+      width: 90%;
+      height: 70vh;
+    }
   }
   .content {
     background-color: #eaeaea;
@@ -238,4 +244,18 @@
   justify-content: flex-start;
   overflow-x: hidden;
   width: 100%;
+}
+@media screen and (max-width: 1150px){
+  .our-category-first-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .category-card{
+    margin-bottom: 50px;
+  }
+  .second-div-margin{
+    margin-top: 0px;
+  }
 }
