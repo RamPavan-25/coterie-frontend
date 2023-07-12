@@ -5,6 +5,7 @@ import { Navigate,useLocation } from 'react-router-dom'
 import Header from '../Header'
 
 import './index.css'
+import Footer from '../Footer'
 
 const Products = () =>{
   const token = Cookies.get('jwt_token')
@@ -19,6 +20,7 @@ const Products = () =>{
       <PrimeDealsSection />
       <AllProductsSection />
     </div>
+    <Footer/>
   </>
 )
 }

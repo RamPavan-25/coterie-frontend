@@ -1,18 +1,19 @@
-import { Link } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import './index.css'
 
 const SimilarProductItem = props => {
-  const {productDetails} = props
+  const {productDetails,OnchangeId} = props
   const {title, brand, imageUrl, rating, price,id} = productDetails
-
+  const navigate=useNavigate()
+  const goToProduct=()=>{
+    navigate(`/products/${id}`);
+  }
   return (
-  <li className="similar-product-item">
-    <Link to={`/products/${id}`} className="link-item">    
+  <li className="similar-product-item"  onClick={()=>OnchangeId(id)}>
       <img
         src={imageUrl}
         className="similar-product-img"
-        alt={`similar product ${title}`}
-      />
+        alt={`similar product ${title}`}/>
       <p className="similar-product-title">{title}</p>
       <p className="similar-products-brand">by {brand}</p>
       <div className="similar-product-price-rating-container">
@@ -26,9 +27,9 @@ const SimilarProductItem = props => {
           />
         </div>
       </div>
-      </Link>
     </li>
   )
 }
+
 
 export default SimilarProductItem

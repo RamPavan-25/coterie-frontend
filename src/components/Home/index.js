@@ -1,6 +1,7 @@
 import {Navigate, useNavigate} from 'react-router-dom'
 import Header from '../Header'
 import Cookies from 'js-cookie'
+import Footer from '../Footer'
 import './index.css'
 import Slider from '../HomeSlider'
 const slideData = [
@@ -20,7 +21,7 @@ const slideData = [
   },
   {
     index: 2,
-    headline: 'Warm Up Jacket',
+    headline: 'Mens Jacket',
     button: 'Shop now',
     src: 'https://assets.ccbp.in/frontend/react-js/ecommerce/clothes-sim-jacket.png',
     ProductId: 3
@@ -155,6 +156,7 @@ const Home = (props) => {
         <Slider slides={slideData} heading="TopProducts Slider"/>
       </div>
     </div>
+    <Footer/>
   </>)
 }
 

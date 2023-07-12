@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link,useParams,Navigate} from 'react-router-dom'
+import {Link,useParams,useNavigate,Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { Rings } from 'react-loader-spinner';
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
@@ -28,6 +28,7 @@ class ProductItemDetails extends Component {
     similarProductsData: [],
     apiStatus: apiStatusConstants.initial,
     quantity: 1,
+    id:''
   }
 
   componentDidMount() {
@@ -105,6 +106,11 @@ class ProductItemDetails extends Component {
 
   onIncrementQuantity = () => {
     this.setState(prevState => ({quantity: prevState.quantity + 1}))
+  }
+
+  OnchangeId=(id)=>{
+    const navigate=this.props.navigate
+    navigate(`/products/${id}`)
   }
 
   renderProductDetailsView = () => (
@@ -188,6 +194,7 @@ class ProductItemDetails extends Component {
                 <SimilarProductItem
                   productDetails={eachSimilarProduct}
                   key={eachSimilarProduct.id}
+                  OnchangeId={this.OnchangeId}
                 />
               ))}
             </ul>
@@ -229,8 +236,13 @@ class ProductItemDetails extends Component {
   }
 }
 
-export default(props) => (
-  <ProductItemDetails
-      {...props}
-      params={useParams()}
-  />)
+// export default(props) => (
+//   <ProductItemDetails
+//       {...props}
+//       params={useParams()}
+//   />)
+
+  export default (props)=>{
+    const navigate=useNavigate();
+    return(<ProductItemDetails {...props} navigate={navigate} params={useParams()}/>)
+  }

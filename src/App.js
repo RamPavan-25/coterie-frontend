@@ -109,7 +109,10 @@ class App extends Component {
             <Route
               exact
               path="/products/:id"
-              element={<ProductItemDetails/>}
+              render={(props) => (
+                <ProductItemDetails key={props.match.params.pageid} {...props} />)
+               }
+               element={<ProductItemDetails/>}
             />
             <Route exact path="/cart" element={<Cart/>} />
             <Route exact path='/gateway' element={<Gateway/>}/>
