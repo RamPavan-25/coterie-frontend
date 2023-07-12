@@ -5,17 +5,20 @@ import Header from '../Header'
 import EmptyCartView from '../EmptyCartView'
 import CartListView from '../CartListView'
 import CartSummary from '../CartSummary'
-
+import axios from 'axios'
 import './index.css'
 import Footer from '../Footer'
 
 const Cart = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList, removeAllCartItems} = value
-      const showEmptyView = cartList.length === 0
-      const onClickRemoveAllBtn = () => {
-        removeAllCartItems()
+      const {len, addCartItem} = value
+      const showEmptyView = len === 0
+      const onClickRemoveAllBtn = async() => {
+        const username=localStorage.getItem("username")
+        const userObj={username:username}
+        const x=await axios.post(`${process.env.REACT_APP_BACKEND_URL}cartAll`,userObj);
+        addCartItem(0);
       }
       const token = Cookies.get('jwt_token')
 
@@ -39,7 +42,7 @@ const Cart = () => (
                   Remove All
                 </button>
                 <CartListView />
-                <CartSummary />
+                {/* <CartSummary /> */}
               </div>
             )}
           </div>

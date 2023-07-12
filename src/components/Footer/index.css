@@ -21,12 +21,12 @@
 .Footer-heading{
     color: white;
     padding-top: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 .Footer-first-heading{
     color: white;
     padding-top: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
 }
 .Footer-first-heading:hover{
     color: #0967d2;

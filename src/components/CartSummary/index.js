@@ -1,14 +1,15 @@
 import CartContext from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import './index.css'
+import axios from 'axios'
 
 const CartSummary = (props) => (
   <CartContext.Consumer>
     {value => {
-      const {cartList} = value
+      let cartList =props.cartList
       let total = 0
       cartList.forEach(eachCartItem => {
-        total += eachCartItem.price * eachCartItem.quantity
+        total += eachCartItem.price * eachCartItem.count
       })
       function GatewayFun(){
         localStorage.setItem('dataKey', JSON.stringify("YES"));

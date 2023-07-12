@@ -15,13 +15,13 @@ const Header = props => {
   const renderCartItemsCount = () => (
     <CartContext.Consumer>
       {value => {
-        const {cartList} = value
-        const cartItemsCount = cartList.length
+        const {len} = value
+        const cartItemsCount = len
 
         return (
           <>
             {cartItemsCount > 0 ? (
-              <span className="cart-count-badge">{cartList.length}</span>
+              <span className="cart-count-badge">{len}</span>
             ) : null}
           </>
         )

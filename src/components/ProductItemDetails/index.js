@@ -128,8 +128,12 @@ class ProductItemDetails extends Component {
           totalReviews,
         } = productData
         const {addCartItem} = value
-        const onClickAddToCart = () => {
-          addCartItem({...productData, quantity})
+        const onClickAddToCart = async() => {
+          const {id}=this.props.params;
+          let username=localStorage.getItem("username");
+          let Cartobj={username:username,quantity,price}
+          const x=await axios.post(`${process.env.REACT_APP_BACKEND_URL}products/${id}`,Cartobj);
+          addCartItem(x.data);
         }
 
         return (
