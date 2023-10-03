@@ -15,16 +15,16 @@ class Footer extends Component{
                 <p className="Footer-heading">Find us on any of these platforms, we respond 1-2 business days.</p>
                 <div className="Icons-div">
                     <div className="footer-anchor-dec">
-                        <a href = "mailto: pk70274@gmail.com"><img src="https://i.ibb.co/GdpyrP2/new.png" className="footer-icons"/></a>
+                        <a href = "mailto: btech10307.20@bitmesra.ac.in"><img src="https://i.ibb.co/GdpyrP2/new.png" className="footer-icons"/></a>
                     </div>
                     <div className="footer-anchor-dec">
-                        <a href="https://github.com/RamPavan-25"><img src="https://i.postimg.cc/7hyPMPVq/github.png" className="footer-icons"/></a>
+                        <a href="https://github.com/kapish099"><img src="https://i.postimg.cc/7hyPMPVq/github.png" className="footer-icons"/></a>
                     </div>
                     <div className="footer-anchor-dec">
-                        <a href="https://www.instagram.com/mr.rampavankumar/"><img src="https://i.postimg.cc/vHFx3bBg/instagram.png" className="footer-icons"/></a>
+                        <a href="https://www.instagram.com/kapish_099/"><img src="https://i.postimg.cc/vHFx3bBg/instagram.png" className="footer-icons"/></a>
                     </div>
                     <div className="footer-anchor-dec">
-                        <a href="https://twitter.com/Rampavankumar8"><img src="https://i.ibb.co/grxh8mj/twitter-1.png" className="footer-icons"/></a>
+                        <a href="https://www.linkedin.com/in/gkapish/"><img src="https://i.ibb.co/51FMF5X/linkedin-5.png" className="footer-icons"/></a>
                     </div>
                 </div>
             </div>

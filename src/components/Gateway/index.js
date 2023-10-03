@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation,useNavigate } from 'react-router-dom'
 import './index.css'
 
 class Gateway extends Component {
@@ -81,6 +81,7 @@ class Gateway extends Component {
     if (jwtToken === undefined) {
       return <Navigate to={"/login"} />
     }
+    
     let x=localStorage.getItem('dataKey')
     x=JSON.parse(x);
     if(x==="NO")
@@ -93,7 +94,7 @@ class Gateway extends Component {
         <div className="login-form-container">
         <form className="form-container" onSubmit={this.submitForm}>
           <img
-            src="https://i.ibb.co/wQrBW59/icon.png"
+            src="https://i.ibb.co/74CmWC2/pngwing-com-1.png"
             className="login-website-logo-desktop-img"
             alt="website logo"
           />
@@ -240,4 +241,7 @@ class Gateway extends Component {
   }
 }
 
-export default Gateway
+export default (props)=>{
+  const navigate=useNavigate();
+  return(<Gateway {...props} navigate={navigate}/>)
+}

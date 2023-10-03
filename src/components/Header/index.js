@@ -36,7 +36,7 @@ const Header = props => {
           <Link to="/">
             <img
               className="website-logo"
-              src="https://i.ibb.co/wQrBW59/icon.png"
+              src="https://i.ibb.co/74CmWC2/pngwing-com-1.png"
               alt="website logo"
             />
           </Link>
@@ -58,7 +58,7 @@ const Header = props => {
           <Link to="/">
             <img
               className="website-logo"
-              src="https://i.ibb.co/wQrBW59/icon.png"
+              src="https://i.ibb.co/74CmWC2/pngwing-com-1.png"
               alt="website logo"
             />
           </Link>

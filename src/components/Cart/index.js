@@ -42,7 +42,6 @@ const Cart = () => (
                   Remove All
                 </button>
                 <CartListView />
-                {/* <CartSummary /> */}
               </div>
             )}
           </div>

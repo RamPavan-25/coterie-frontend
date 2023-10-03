@@ -9,7 +9,7 @@
     min-height: 250px;
 }
 .footer-icons{
-    width: 25px;
+    width: 28px;
 }
 .Footer-links-dev{
     display: flex;
@@ -38,7 +38,7 @@
 .footer-anchor-dec{
     background-color: white;
     width: 35px;
-    border-radius: 50px;
+    border-radius: 35px;
     padding: 10px;
     display: flex;
     justify-content: center;
