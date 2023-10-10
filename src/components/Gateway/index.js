@@ -94,7 +94,7 @@ class Gateway extends Component {
         <div className="login-form-container">
         <form className="form-container" onSubmit={this.submitForm}>
           <img
-            src="https://i.ibb.co/74CmWC2/pngwing-com-1.png"
+            src="https://i.ibb.co/59LxL70/Whats-App-Image-2023-10-10-at-10-40-33-PM-removebg-preview.png"
             className="login-website-logo-desktop-img"
             alt="website logo"
           />
